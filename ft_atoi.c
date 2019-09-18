@@ -1,23 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oearlene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/05 03:56:00 by oearlene          #+#    #+#             */
-/*   Updated: 2019/09/18 02:57:08 by oearlene         ###   ########.fr       */
+/*   Created: 2019/09/17 01:21:01 by oearlene          #+#    #+#             */
+/*   Updated: 2019/09/17 01:34:33 by oearlene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strcmp(const char *s1, const char *s2)
+int	ft_atoi(const char *str)
 {
-	int i;
+	int res;
+	int flag;
 
-	i = 0;
-	while (s1[i] == s2[i] && s1[i] != '\0')
-		i++;
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	res = 0;
+	flag = 0;
+	while (*str >= 0 && *str <= 32)
+		str++;
+	if (*str == '+')
+	{
+		flag = 1;
+		str++;
+	}
+	if (*str == '-')
+	{
+		flag = -1;
+		str++;
+	}
+	while (*str >= '0' && *str <= '9')
+		res = res * 10 + (*str - '0');
+	return (res * flag);
 }

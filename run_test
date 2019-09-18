@@ -1,0 +1,6 @@
+#!bin/sh
+cd ../libft
+make re
+make clean
+cd ../libft-unit-test
+make f

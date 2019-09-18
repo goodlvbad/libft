@@ -6,13 +6,13 @@
 /*   By: oearlene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/06 02:59:10 by oearlene          #+#    #+#             */
-/*   Updated: 2019/09/06 07:13:57 by oearlene         ###   ########.fr       */
+/*   Updated: 2019/09/16 23:06:02 by oearlene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-char	*ft_strdup(char *src)
+char	*ft_strdup(const char *src)
 {
 	char	*str;
 	char	*s;
