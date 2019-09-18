@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oearlene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/17 01:21:01 by oearlene          #+#    #+#             */
-/*   Updated: 2019/09/19 01:57:53 by oearlene         ###   ########.fr       */
+/*   Created: 2019/09/19 00:31:54 by oearlene          #+#    #+#             */
+/*   Updated: 2019/09/19 00:34:08 by oearlene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+char	*ft_strcat(char *s1, const char *s2)
 {
-	long long int	res;
-	signed char		flag;
+	size_t	len;
+	int		i;
 
-	res = 0;
-	flag = 1;
-	while (*str && (*str >= 0 && *str <= 32))
-		str++;
-	if (*str == '-')
-		flag = -1;
-	if (*str == '-' || *str == '+')
-		str++;
-	while (*str && (*str >= '0' && *str <= '9'))
+	len = ft_strlen(s1);
+	i = 0;
+	while (s2[i] != '\0')
 	{
-		res = res * 10 + (*str - '0');
-		str++;
+		s1[len + i] = s2[i];
+		i++;
 	}
-	return (res * flag);
+	s1[len + i] = '\0';
+	return (s1);
 }

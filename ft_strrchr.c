@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oearlene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/17 01:21:01 by oearlene          #+#    #+#             */
-/*   Updated: 2019/09/19 01:57:53 by oearlene         ###   ########.fr       */
+/*   Created: 2019/09/19 01:04:55 by oearlene          #+#    #+#             */
+/*   Updated: 2019/09/19 01:12:49 by oearlene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+char	*ft_strrchr(const char *str, int ch)
 {
-	long long int	res;
-	signed char		flag;
+	char	*s;
 
-	res = 0;
-	flag = 1;
-	while (*str && (*str >= 0 && *str <= 32))
-		str++;
-	if (*str == '-')
-		flag = -1;
-	if (*str == '-' || *str == '+')
-		str++;
-	while (*str && (*str >= '0' && *str <= '9'))
+	s = (char *)str + ft_strlen(str);
+	while (*s != ch)
 	{
-		res = res * 10 + (*str - '0');
-		str++;
+		if (s == str)
+			return (NULL);
+		s--;
 	}
-	return (res * flag);
+	return (s);
 }

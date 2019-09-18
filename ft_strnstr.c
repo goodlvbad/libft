@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oearlene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/17 01:21:01 by oearlene          #+#    #+#             */
-/*   Updated: 2019/09/19 01:57:53 by oearlene         ###   ########.fr       */
+/*   Created: 2019/09/19 01:27:11 by oearlene          #+#    #+#             */
+/*   Updated: 2019/09/19 01:27:11 by oearlene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+char	*ft_strnstr(const char *s, const char *sfind, size_t n)
 {
-	long long int	res;
-	signed char		flag;
+	size_t	len;
 
-	res = 0;
-	flag = 1;
-	while (*str && (*str >= 0 && *str <= 32))
-		str++;
-	if (*str == '-')
-		flag = -1;
-	if (*str == '-' || *str == '+')
-		str++;
-	while (*str && (*str >= '0' && *str <= '9'))
+	if (*sfind == '\0')
+		return ((char *)s);
+	len = ft_strlen(sfind);
+	while (*s != '\0' && n-- >= len)
 	{
-		res = res * 10 + (*str - '0');
-		str++;
+		if (*s == *sfind && ft_memcmp(s, sfind, len) == 0)
+			return ((char *)s);
+		s++;
 	}
-	return (res * flag);
+	return (NULL);
 }
