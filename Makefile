@@ -6,7 +6,7 @@
 #    By: oearlene <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/17 22:51:45 by oearlene          #+#    #+#              #
-#    Updated: 2019/09/17 23:05:13 by oearlene         ###   ########.fr        #
+#    Updated: 2019/09/20 06:08:26 by oearlene         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,19 +16,22 @@ SRC = *.c
 
 OBJ = *.o
 
-FLAGS = -Wall -Wextra -Werror
+HED = libft.h
+
+FLAGS = -Wall -Wextra -Werror -c
 
 all: $(NAME)
 
-$(NAME):
-	@gcc $(FLAGS) -c $(SRC) libft.h
-	@ar rc $(NAME) $(OBJ)
+$(OBJ): $(SRC)
+	gcc $(FLAGS) $(SRC)
+
+$(NAME): $(OBJ)
+	ar rc $(NAME) $(OBJ) $(HED)
 
 clean:
-	@rm -rf $(OBJ)
+	/bin/rm -rf $(OBJ)
 
 fclean: clean
-	@rm -rf $(OBJ)
-	@rm -rf $(NAME)
+	/bin/rm -rf $(NAME)
 
 re: fclean all

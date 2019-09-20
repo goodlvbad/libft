@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oearlene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/20 05:35:19 by oearlene          #+#    #+#             */
-/*   Updated: 2019/09/20 19:09:55 by oearlene         ###   ########.fr       */
+/*   Created: 2019/09/20 23:29:04 by oearlene          #+#    #+#             */
+/*   Updated: 2019/09/20 23:31:17 by oearlene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strclr(char *s)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	if (s == NULL)
-		return ;
-	while (*s)
+	char	*newstr;
+	size_t	i;
+	size_t	j;
+
+	if (s == NULL || f == NULL)
+		return (NULL);
+	i = 0;
+	j = ft_strlen((char *)s);
+	if (!(newstr = ft_strnew(j)))
+		return (NULL);
+	while (s[i])
 	{
-		*s = '\0';
-		s++;
+		newstr[i] = f(i, s[i]);
+		i++;
 	}
+	return (newstr);
 }
