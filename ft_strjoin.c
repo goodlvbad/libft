@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oearlene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/21 17:57:26 by oearlene          #+#    #+#             */
-/*   Updated: 2019/09/21 19:08:35 by oearlene         ###   ########.fr       */
+/*   Created: 2019/09/22 18:02:54 by oearlene          #+#    #+#             */
+/*   Updated: 2019/09/22 19:34:39 by oearlene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*subst;
-	size_t	i;
-	size_t	j;
+	char	*res;
+	size_t	size;
+	size_t	lens1;
+	size_t	lens2;
 
-	if (s == NULL)
+	if (s1 == NULL || s2 == NULL)
 		return (NULL);
-	j = ft_strlen((char *)s);
-	if (!(subst = ft_strnew(len)))
+	lens1 = (ft_strlen((char*)s1));
+	lens2 = (ft_strlen((char*)s2));
+	size = lens1 + lens2;
+	if (!(res = ft_strnew(size)))
 		return (NULL);
-	if (start > j)
-		return (NULL);
-	i = 0;
-	while(s[start] && i < len)
-	{
-		subst[i] = s[start];
-		start++;
-		i++;
-	}
-	return (subst);
+	if (s1)
+		res = ft_strcpy(res, (char*)s1);
+	else
+		res = ft_strcpy(res, (char*)s2);
+	if (s1 && s2)
+		res = ft_strcat(res, (char*)s2);
+	return (res);
 }

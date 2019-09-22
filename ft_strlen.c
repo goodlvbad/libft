@@ -6,7 +6,7 @@
 /*   By: oearlene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 03:50:56 by oearlene          #+#    #+#             */
-/*   Updated: 2019/09/16 22:13:59 by oearlene         ###   ########.fr       */
+/*   Updated: 2019/09/22 20:12:00 by oearlene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlen(const char *str)
 {
-	long int i;
+	size_t	i;
 
 	i = 0;
 	while (str[i] != '\0')
