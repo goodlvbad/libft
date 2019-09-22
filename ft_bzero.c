@@ -6,7 +6,7 @@
 /*   By: oearlene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 21:10:49 by oearlene          #+#    #+#             */
-/*   Updated: 2019/09/16 21:12:32 by oearlene         ###   ########.fr       */
+/*   Updated: 2019/09/23 00:52:33 by oearlene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	ft_bzero(void *b, size_t len)
 {
-	ft_memset((void *) b, 0, (size_t) len);
+	ft_memset((void *)b, 0, (size_t)len);
 }

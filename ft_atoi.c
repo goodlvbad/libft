@@ -6,7 +6,7 @@
 /*   By: oearlene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 01:21:01 by oearlene          #+#    #+#             */
-/*   Updated: 2019/09/20 04:52:16 by oearlene         ###   ########.fr       */
+/*   Updated: 2019/09/23 00:52:00 by oearlene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ int		ft_atoi(const char *str)
 
 	flag = 1;
 	res = 0;
-	while (*str == '\n' || *str == '\t' || *str == '\v' || *str == ' ' ||
-		   *str == '\f' || *str == '\r')
+	while (*str == '\n' || *str == '\t' || *str == '\v' || *str == ' ' || *str == '\f' || *str == '\r')
 		str++;
 	if (*str == '-' || *str == '+')
 	{

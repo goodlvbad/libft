@@ -6,7 +6,7 @@
 /*   By: oearlene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/21 17:57:26 by oearlene          #+#    #+#             */
-/*   Updated: 2019/09/21 19:08:35 by oearlene         ###   ########.fr       */
+/*   Updated: 2019/09/23 01:12:01 by oearlene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	if (start > j)
 		return (NULL);
 	i = 0;
-	while(s[start] && i < len)
+	while (s[start] && i < len)
 	{
 		subst[i] = s[start];
 		start++;

@@ -1,8 +1,0 @@
-#!/bin/sh
-cd ../libft
-make all
-make clean
-cd ../libft-unit-test
-make f
-cd ../libft
-make fclean
