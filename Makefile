@@ -6,7 +6,7 @@
 #    By: oearlene <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/17 22:51:45 by oearlene          #+#    #+#              #
-#    Updated: 2019/09/23 06:01:40 by oearlene         ###   ########.fr        #
+#    Updated: 2019/09/23 06:02:29 by oearlene         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,8 +64,8 @@ SRC =	ft_memset.c \
 		ft_itoa.c \
 		ft_strequ.c \
 		ft_strnequ.c \
-		ft_lstnew.c
-
+		ft_lstnew.c \
+		ft_lstadd.c
 
 OBJ =	ft_memset.o \
      	ft_bzero.o \
@@ -119,7 +119,8 @@ OBJ =	ft_memset.o \
      	ft_itoa.o \
      	ft_strequ.o \
      	ft_strnequ.o \
-     	ft_lstnew.o
+     	ft_lstnew.o \
+     	ft_lstadd.o
 
 HED = libft.h
 

@@ -6,7 +6,7 @@
 /*   By: oearlene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/23 01:16:33 by oearlene          #+#    #+#             */
-/*   Updated: 2019/09/23 05:54:35 by oearlene         ###   ########.fr       */
+/*   Updated: 2019/09/23 06:14:48 by oearlene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct		s_list
 }					t_list;
 
 t_list				*ft_lstnew(void const *content, size_t content_size);
+void				ft_lstadd(t_list **alst, t_list *new);
 
 void				*ft_memset(void *dst, int c, size_t len);
 void				ft_bzero(void *b, size_t len);
