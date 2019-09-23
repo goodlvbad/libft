@@ -6,7 +6,7 @@
 /*   By: oearlene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/22 18:05:02 by oearlene          #+#    #+#             */
-/*   Updated: 2019/09/22 20:54:47 by oearlene         ###   ########.fr       */
+/*   Updated: 2019/09/23 02:45:15 by oearlene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,11 @@ char	*ft_strtrim(char const *s)
 		return (NULL);
 	end = ft_strlen((char *)s);
 	begin = 0;
-	while (s[begin] && (s[begin] == ' ' || s[begin] == '\n' || s[begin] == '\t'))
+	while (s[begin] &&
+			(s[begin] == ' ' || s[begin] == '\n' || s[begin] == '\t'))
 		begin++;
-	while (begin < end && (s[end - 1] == ' ' || s[end - 1] == '\n' || s[end - 1] == '\t'))
+	while (begin < end &&
+			(s[end - 1] == ' ' || s[end - 1] == '\n' || s[end - 1] == '\t'))
 		end--;
 	if (begin == end)
 		return (ft_strnew(0));
