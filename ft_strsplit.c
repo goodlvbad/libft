@@ -64,7 +64,7 @@ char			**ft_strsplit(const char *str, char c)
 	if (str == NULL)
 		return (NULL);
 	wrd = ft_count_words(str, c);
-	if (!(s = (char **)malloc(sizeof(s) * (wrd + 2))))
+	if (!(s = (char **)malloc(sizeof(s) * (wrd + 1))))
 		return (NULL);
 	while (str[i] == c && str[i])
 		i++;

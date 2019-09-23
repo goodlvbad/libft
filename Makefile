@@ -65,7 +65,8 @@ SRC =	ft_memset.c \
 		ft_strequ.c \
 		ft_strnequ.c \
 		ft_lstnew.c \
-		ft_lstadd.c
+		ft_lstadd.c \
+		ft_lstiter.c
 
 OBJ =	ft_memset.o \
      	ft_bzero.o \
@@ -120,7 +121,8 @@ OBJ =	ft_memset.o \
      	ft_strequ.o \
      	ft_strnequ.o \
      	ft_lstnew.o \
-     	ft_lstadd.o
+     	ft_lstadd.o \
+     	ft_lstiter.o
 
 HED = libft.h
 

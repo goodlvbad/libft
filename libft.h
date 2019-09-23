@@ -25,6 +25,7 @@ typedef struct		s_list
 
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstadd(t_list **alst, t_list *new);
+void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 
 void				*ft_memset(void *dst, int c, size_t len);
 void				ft_bzero(void *b, size_t len);
