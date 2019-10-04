@@ -6,7 +6,7 @@
 /*   By: oearlene <oearlene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/04 04:23:35 by oearlene          #+#    #+#             */
-/*   Updated: 2019/10/04 05:09:15 by oearlene         ###   ########.fr       */
+/*   Updated: 2019/10/04 05:12:17 by oearlene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 	t_list	*nxt;
 
 	if (alst == NULL || del == NULL)
-		return (NULL);
+		return ;
 	lst = *alst;
 	while (lst)
 	{
