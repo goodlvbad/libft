@@ -6,7 +6,7 @@
 /*   By: oearlene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 01:21:01 by oearlene          #+#    #+#             */
-/*   Updated: 2019/09/23 04:48:17 by oearlene         ###   ########.fr       */
+/*   Updated: 2019/10/04 02:20:34 by oearlene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int		ft_atoi(const char *str)
 {
-	int				flag;
-	long long int	res;
-	long long int	prev;
+	int						flag;
+	unsigned long long int	res;
+	unsigned long long int	prev;
 
 	flag = 1;
 	res = 0;
@@ -29,7 +29,7 @@ int		ft_atoi(const char *str)
 			flag = -1;
 		str++;
 	}
-	while (ft_isdigit((int)*str))
+	while (*str >= '0' && *str <= '9')
 	{
 		prev = res;
 		res = res * 10 + *str - '0';

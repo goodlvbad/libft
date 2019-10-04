@@ -6,7 +6,7 @@
 /*   By: oearlene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/23 05:48:34 by oearlene          #+#    #+#             */
-/*   Updated: 2019/09/23 05:49:06 by oearlene         ###   ########.fr       */
+/*   Updated: 2019/10/04 04:19:02 by oearlene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 {
 	t_list	*nelem;
 
+	if (content == NULL)
+		return (NULL);
 	if (!(nelem = (t_list *)malloc(sizeof(*nelem))))
 		return (NULL);
 	if (content == NULL)

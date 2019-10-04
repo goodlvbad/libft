@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oearlene <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: oearlene <oearlene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/23 23:02:05 by oearlene          #+#    #+#             */
-/*   Updated: 2019/09/23 23:34:35 by oearlene         ###   ########.fr       */
+/*   Created: 2019/10/04 04:23:35 by oearlene          #+#    #+#             */
+/*   Updated: 2019/10/04 05:09:15 by oearlene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	if (lst == NULL || f == NULL)
+	t_list	*lst;
+	t_list	*nxt;
+
+	if (alst == NULL || del == NULL)
 		return (NULL);
+	lst = *alst;
 	while (lst)
 	{
-		f(lst);
-		lst = lst->next;
+		nxt = lst->next;
+		del(lst->content, lst->content_size);
+		free(lst);
+		lst = nxt;
 	}
+	*alst = NULL;
 }
