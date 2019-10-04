@@ -6,7 +6,7 @@
 #    By: oearlene <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/17 22:51:45 by oearlene          #+#    #+#              #
-#    Updated: 2019/10/04 05:33:33 by oearlene         ###   ########.fr        #
+#    Updated: 2019/10/05 00:33:41 by oearlene         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,18 +71,18 @@ SRC =	ft_memset.c \
 		ft_lstdel.c \
 		ft_lstmap.c \
 
-OBJ = $(SRC:.c = .o) // ?????
+OBJ = $(SRC:.c=.o)
 
 HED = libft.h
 
-FLAGS = -Wall -Wextra -Werror -c
+FLAGS = -Wall -Wextra -Werror
 
 .PHONY: all clean fclean re
 
 all: $(NAME)
 
-$(OBJ): $(SRC)
-	@gcc $(FLAGS) $(SRC) // $< -o $@
+%.o: %.c
+	@gcc $(FLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
 	@ar rc $(NAME) $(OBJ) $(HED)

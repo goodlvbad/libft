@@ -6,7 +6,7 @@
 /*   By: oearlene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 01:21:01 by oearlene          #+#    #+#             */
-/*   Updated: 2019/10/04 02:20:34 by oearlene         ###   ########.fr       */
+/*   Updated: 2019/10/05 00:55:10 by oearlene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int		ft_atoi(const char *str)
 {
-	int						flag;
-	unsigned long long int	res;
-	unsigned long long int	prev;
+	int				flag;
+	long long int	res;
+	long long int	prev;
 
 	flag = 1;
 	res = 0;
@@ -33,7 +33,7 @@ int		ft_atoi(const char *str)
 	{
 		prev = res;
 		res = res * 10 + *str - '0';
-		if (prev > res || res - 1 >= 9223372036854775807)
+		if (prev > res)
 			return (flag > 0 ? -1 : 0);
 		str++;
 	}
