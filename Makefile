@@ -12,6 +12,24 @@
 
 NAME = libft.a
 
+SRC_PATH = ./srcs/
+INC_PATH = ./includes/
+OBJ_PATH = ./obj/
+
+SRC = $(addprefix $(SRC_PATH),$(SRC_NAME))
+OBJ = $(addprefix $(OBJ_PATH),$(OBJ_NAME))
+OBJ_1 = $(addprefix $(OBJ_PATH),$(OBJ_L))
+INC = $(addprefix -I ,$(INC_PATH))
+
+SRC_NAME =  ft_printf.c \
+            parser.c \
+            print.c \
+            print_nbr_conversions.c \
+            print_numbers.c \
+            print_hex_nb.c \
+            get_conv_f.c \
+            print_strings.c
+
 SRC =	ft_memset.c \
 		ft_bzero.c \
 		ft_memcpy.c \
@@ -71,26 +89,35 @@ SRC =	ft_memset.c \
 		ft_lstdel.c \
 		ft_lstmap.c \
 
-OBJ = $(SRC:.c=.o)
+OBJ_L = $(SRC:.c=.o)
+OBJ_NAME = $(SRC_NAME:.c=.o)
 
+INC_NAME = ft_printf.h
 HED = libft.h
 
 FLAGS = -Wall -Wextra -Werror
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re CREATE_OBJ_PATH
 
 all: $(NAME)
 
-%.o: %.c
-	@gcc $(FLAGS) -c $< -o $@
+CREATE_OBJ_PATH:
+	@mkdir -p $(OBJ_PATH)
 
-$(NAME): $(OBJ)
-	@ar rc $(NAME) $(OBJ) $(HED)
+$(OBJ_PATH)%.o: %.c
+	@gcc $(FLAGS) $(INC) -c $< -o $@
+
+$(OBJ_PATH)%.o: $(SRC_PATH)%.c
+	@gcc $(FLAGS) $(INC) $(INC)$(HED) -o $@ -c $<
+
+$(NAME): CREATE_OBJ_PATH $(OBJ_1) $(OBJ)
+	@ar rc $(NAME) $(OBJ_1) $(OBJ) $(INC_PATH)$(HED) $(INC_PATH)$(INC_NAME)
+	@ranlib $(NAME)
 
 clean:
-	@/bin/rm -rf $(OBJ)
+	@rm -rf $(OBJ_PATH)
 
 fclean: clean
-	@/bin/rm -rf $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
